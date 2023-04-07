@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counting App</title>
+    <link rel="stylesheet" href="./index.css" />
+    <style>
+      body {
+        background-image: url(https://images.unsplash.com/photo-1625979061911-e3673d9a5385?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8aGlsbCUyMHN0YXRpb258ZW58MHx8MHx8&w=1000&q=80);
+        background-size: cover;
+        font-family: "Courier New", Courier, monospace;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      h1 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        font-size: 50px;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+
+      button {
+        border: none;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: #fff;
+        font-weight: bold;
+        width: 200px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+      }
+
+      #increasing-btn {
+        background: darkred;
+      }
+
+      #Save-btn {
+        background: darkgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>People Entered</h1>
+    <h2 id="counting-ks">0</h2>
+    <button id="increasing-btn" onclick="increaseFunction()">INCREASE</button>
+    <button id="Save-btn" onclick="saveFunction()">SAVE</button>
+    <p id="previous-Ent">Previous Enteries Are:</p>
+    <script>
+      let count = 0;
+      let saveID = document.getElementById("previous-Ent");
+      let countID = document.getElementById("counting-ks");
+
+      function increaseFunction() {
+        count += 1;
+        countID.textContent = count;
+      }
+
+      function saveFunction() {
+        let count2 = count + " , ";
+        saveID.textContent += count2;
+        countID.textContent = 0;
+        count = 0;
+      }
+
+      console.log("Chalo Logo Ko count karte h");
+    </script>
+  </body>
+</html>
